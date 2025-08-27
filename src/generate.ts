@@ -1241,29 +1241,26 @@ export class LLMSGenerator {
    * Generate pages content section
    */
   private generatePagesContent(pageResults: PageResult[]): string {
-    const pageContents = pageResults.map((result, index) => {
-      const pageIndex = index + 1;
-      
+    const pageContents = pageResults.map((result) => {
       if (!result.success) {
-        return `### [${pageIndex}] (Skipped) ${result.title}\n` +
-               `> ${result.url}\n` +
-               `> reason: ${result.error || 'unknown'}\n\n` +
-               `No content extracted.\n\n---`;
-      }
-      
-      let metadata = `> ${result.url}\n`;
-      
-      if (result.language) {
-        metadata += `> lang: ${result.language}\n`;
+        return `### BEGIN SKIPPED\n` +
+               `title: ${result.title}\n` +
+               `url: ${result.url}\n` +
+               `reason: ${result.error || 'unknown'}\n` +
+               `### END SKIPPED`;
       }
       
       // Demote headings in content
       const demotedContent = this.demoteHeadings(result.content);
       
-      return `### [${pageIndex}] ${result.title}\n${metadata}\n${demotedContent}\n\n---`;
+      return `### BEGIN PAGE\n` +
+             `title: ${result.title}\n` +
+             `url: ${result.url}\n` +
+             `### END PAGE\n\n` +
+             `${demotedContent}`;
     });
     
-    return pageContents.join('\n\n');
+    return pageContents.join('\n\n---\n\n');
   }
 
   /**

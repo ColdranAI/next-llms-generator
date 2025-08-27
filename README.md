@@ -1,4 +1,7 @@
-# next-llms-generator
+# Next.js LLMS.TXT Generator
+
+<img width="900" height="412" alt="image" src="https://github.com/user-attachments/assets/953d68d1-12f8-43b7-87ef-08b46fc45f6d" />
+
 
 > Generate LLM-friendly text files from Next.js applications
 

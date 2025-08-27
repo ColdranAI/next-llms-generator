@@ -83,9 +83,8 @@ LLMS_MAX_PAGES=1000
 - `cacheTtl`: Cache duration in minutes (default: 60)
 
 ## Static Generation
-
+Add this script in `package.json`.
 ```json
-// package.json
 {
   "scripts": {
     "postbuild": "next-llms-generator"

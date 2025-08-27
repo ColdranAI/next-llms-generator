@@ -48,11 +48,15 @@
     "markdown",
     "typescript"
   ],
-  "author": "Your Name",
+  "author": "Coldran <arjun@coldran.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/next-llms-generator.git"
+    "url": "https://github.com/ColdranAI/next-llms-generator.git"
+  },
+  "homepage": "https://github.com/ColdranAI/next-llms-generator#readme",
+  "bugs": {
+    "url": "https://github.com/ColdranAI/next-llms-generator/issues"
   },
   "peerDependencies": {
     "next": ">=13.4",

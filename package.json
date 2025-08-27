@@ -1,0 +1,75 @@
+{
+  "name": "next-llms-generator",
+  "version": "0.1.0",
+  "description": "Generate LLM-friendly text files from Next.js applications by crawling sitemaps and extracting content",
+  "type": "module",
+  "main": "./dist/route.js",
+  "types": "./dist/route.d.ts",
+  "exports": {
+    "./route": {
+      "types": "./dist/route.d.ts",
+      "import": "./dist/route.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/types.js"
+    },
+    "./generate": {
+      "types": "./dist/generate.d.ts",
+      "import": "./dist/generate.js"
+    },
+    "./cli": {
+      "types": "./dist/cli.d.ts",
+      "import": "./dist/cli.js"
+    }
+  },
+  "bin": {
+    "next-llms-generator": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nextjs",
+    "llm",
+    "ai",
+    "sitemap",
+    "crawler",
+    "content-extraction",
+    "markdown",
+    "typescript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/next-llms-generator.git"
+  },
+  "peerDependencies": {
+    "next": ">=13.4",
+    "react": ">=18"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.5.0",
+    "jsdom": "^24.1.3",
+    "turndown": "^7.2.1"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^20.11.0",
+    "@types/turndown": "^5.0.5",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
